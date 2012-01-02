@@ -27,7 +27,7 @@ if os.path.exists(dataFilePathExpanded):
   dataFile = open(dataFilePathExpanded, 'rb+')
   dataReader = csv.reader(dataFile)
   for row in dataReader:
-    feedProcessedTimes[row[0]] = row[1]
+    feedProcessedTimes[row[0]] = long(row[1])
 
 bus = dbus.SessionBus()
 obj = bus.get_object("im.pidgin.purple.PurpleService", "/im/pidgin/purple/PurpleObject")

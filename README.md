@@ -1,13 +1,11 @@
 # Read feeds (Atom, RSS) in Pidgin
-This is a simple Python script that
+A Python script that
 
   * fetches specified feeds
   * shows them in a conversation view in pidgin
 
 Especially useful for monitoring GitHub updates, since GitHub doesn't have commit notifications by email.
 (Though it does have other types of notifications).
-
-The script is very basic right now, but will be evolved soon.
 
 # Requirements
 

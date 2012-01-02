@@ -1,5 +1,6 @@
 # Read feeds (Atom, RSS) in Pidgin
 This is a simple Python script that
+
   * fetches specified feeds
   * shows them in a conversation view in pidgin
 
@@ -11,7 +12,7 @@ The script is very basic right now, but will be evolved soon.
 # Requirements
 
   * Python (tested with Python 2.7)
-  * [FeedParser][FP]
+  * [FeedParser][FP] - A python library for parsing various types of feeds
 
   [FP]: http://www.feedparser.org
 
@@ -22,3 +23,4 @@ The script is very basic right now, but will be evolved soon.
 
         */5  * * * * ./local/bin/feedgin.py
 
+    The above cron-job runs this script every 5 minutes

@@ -5,8 +5,11 @@ A Python script that
   * shows the updates as messages in a conversation view in pidgin
   * keeps track of the time of the updates so that previously shown updates are not shown again
 
-Especially useful for monitoring GitHub updates, since GitHub doesn't have commit notifications by email.
-(Though it does have other types of notifications).
+Can be used with any RSS / Atom feeds including:
+
+  * Blog updates
+  * Twitter
+  * GitHub updates, since GitHub doesn't have commit notifications by email. (Though it does have other types of notifications).
 
 # Requirements
 

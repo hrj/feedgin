@@ -18,6 +18,7 @@ Especially useful for monitoring GitHub updates, since GitHub doesn't have commi
 # Installation
 
   * Copy the feedgin.py file to a local directory such as `~local/bin/`
+  * Edit the file to setup feeds. Follow the examples in the top of the file.
   * Set up a cron job such as:
 
     `*/5  * * * * DISPLAY=:0 ./local/bin/feedgin.py`

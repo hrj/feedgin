@@ -35,12 +35,15 @@ obj = bus.get_object("im.pidgin.purple.PurpleService", "/im/pidgin/purple/Purple
 purple = dbus.Interface(obj, "im.pidgin.purple.PurpleInterface")
 
 activeAccounts = purple.PurpleAccountsGetAllActive()
+messageFlags = 0x2
+
+from datetime import datetime
 
 if (len(activeAccounts) > 0) :
   account = activeAccounts[0]
   conversation = purple.PurpleConversationNew(1, account, "feedgin")
   for feedName in feeds:
-    print "Fetching", feedName
+    print "Fetching", feedName, "[", datetime.now(), "]"
     feed = feeds[feedName]
     url = feed["url"]
     ast = feedparser.parse(url)
@@ -64,8 +67,10 @@ if (len(activeAccounts) > 0) :
         text = "<br/><b><a href='"+ x.link + "'>"+x.title+"</a></b> <em>by</em> <b><a href='"+author.href+"'>"+author.name+"</a></b>"
         if (feed.get("showSummary", True)):
           text += "<br/><small>" + x.summary + '</small>'
-        purple.PurpleConversationWrite(conversation, feedName, text, 0, time_since_epoch)
-
+        im = purple.PurpleConvIm(conversation)
+        purple.PurpleConvImWrite(im, feedName, text, messageFlags, time_since_epoch)
+else:
+  print "No account is online right now."
 
 dataFile = open(dataFilePathExpanded, 'wb+')
 dataWriter = csv.writer(dataFile)

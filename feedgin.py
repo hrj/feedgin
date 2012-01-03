@@ -7,7 +7,8 @@ feeds = {
     "url":"https://github.com/hrj.atom"
   },
   "Google News" : {
-    "url" : "http://news.google.co.in/news?pz=1&cf=all&ned=in&hl=en&output=rss"
+    "url" : "http://news.google.co.in/news?pz=1&cf=all&ned=in&hl=en&output=rss",
+    "showSummary":False
   }
 }
 
@@ -60,7 +61,8 @@ if (len(activeAccounts) > 0) :
         # Pidgin apparently doesn't show <img/> correctly
         #text = "<img id='42' src='"+x.media_thumbnail[0]["url"]+"' />"
         text = "<br/><b><a href='"+ x.link + "'>"+x.title+"</a></b> <em>by</em> <b><a href='"+author.href+"'>"+author.name+"</a></b>"
-        text += "<br/><small>" + x.summary + '</small>'
+        if (feeds.get("showSummary", True)):
+          text += "<br/><small>" + x.summary + '</small>'
         purple.PurpleConversationWrite(conversation, feedName, text, 0, time_since_epoch)
 
 

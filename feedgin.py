@@ -41,7 +41,8 @@ if (len(activeAccounts) > 0) :
   conversation = purple.PurpleConversationNew(1, account, "feedgin")
   for feedName in feeds:
     print "Fetching", feedName
-    url = feeds[feedName]["url"]
+    feed = feeds[feedName]
+    url = feed["url"]
     ast = feedparser.parse(url)
     #purple.PurpleConversationWrite(conversation, feedName, ast.feed.title, 0, 0)
     #print "feed:", ast.feed
@@ -61,7 +62,7 @@ if (len(activeAccounts) > 0) :
         # Pidgin apparently doesn't show <img/> correctly
         #text = "<img id='42' src='"+x.media_thumbnail[0]["url"]+"' />"
         text = "<br/><b><a href='"+ x.link + "'>"+x.title+"</a></b> <em>by</em> <b><a href='"+author.href+"'>"+author.name+"</a></b>"
-        if (feeds.get("showSummary", True)):
+        if (feed.get("showSummary", True)):
           text += "<br/><small>" + x.summary + '</small>'
         purple.PurpleConversationWrite(conversation, feedName, text, 0, time_since_epoch)
 

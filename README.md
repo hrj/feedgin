@@ -16,7 +16,7 @@ Can be used with any RSS / Atom feeds including:
   * Python (tested with Python 2.7)
   * [FeedParser][FP] - A Python library for parsing various types of feeds
 
-  [FP]: http://www.feedparser.org
+  [FP]: http://code.google.com/p/feedparser
 
 # Installation
 

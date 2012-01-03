@@ -1,7 +1,7 @@
-# Read feeds (Atom, RSS) in Pidgin
+# FeedGin : Feeds in Pidgin
 A Python script that
 
-  * fetches feeds from their specified URLs
+  * fetches feeds (RSS, Atom) from their specified URLs
   * shows the updates as messages in a conversation view in pidgin
   * keeps track of the time of the updates so that previously shown updates are not shown again
 

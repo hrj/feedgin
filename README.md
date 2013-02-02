@@ -8,12 +8,12 @@ A Python script that
 Can be used with any RSS / Atom feeds including:
 
   * Blog updates
-  * Twitter
-  * GitHub updates, since GitHub doesn't have commit notifications by email. (Though it does have other types of notifications).
+  * Twitter posts
+  * GitHub updates, etc.
 
 # Requirements
 
-  * Python (tested with Python 2.7)
+  * Python (requires Python 2.7+)
   * [FeedParser][FP] 5.1 - A Python library for parsing various types of feeds
 
   [FP]: http://code.google.com/p/feedparser
